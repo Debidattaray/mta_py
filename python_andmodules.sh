@@ -70,9 +70,11 @@ sed -i 's/,$var,/$var/g' yesipcus.sh
 sed -i 's/,$var,/$var/g' todipcus.sh
 sed -i 's/,$var,/$var/g' ipcus.sh
 cd /etc/pmta
-echo "#########################################  STEP- 2  #######################################"
-chmod 775 ./*
+echo "#########################################  step -2 py steps  #######################################"
+#chmod 775 ./*
 # python3 ./config_bash.py
+python3 /apps/mta_py/config_bash.py
+python3 /apps/mta_py/go_dns.py
 
 ulimit -n 766889
 service pmta restart
