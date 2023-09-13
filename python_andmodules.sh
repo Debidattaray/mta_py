@@ -17,7 +17,7 @@ rpm -e PowerMTA-4.5r1.rpm
 yum remove -y PowerMTA*
 rm -rf /etc/pmta /var/spool/pmta
 systemctl stop postfix
-yum remove postfix
+yum remove postfix -y
 echo "un-install completed"
 
 # installation
@@ -84,7 +84,7 @@ iptables -F
 echo "#########################################  STEP- 3  #######################################"
 
 service pmta stop
-python3 ./go_dns.py
+
 #pmtad --debug
 sh /apps/mta_py/clear_log.sh
 echo "Auto log clean setup Done ... "
