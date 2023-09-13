@@ -7,3 +7,4 @@ Power MTA auto installer
 ### mkdir /apps
 ### mv mta_py apps
 ### cd /apps/mta_py
+### chmod -R 755 .
