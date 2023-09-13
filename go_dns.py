@@ -42,7 +42,7 @@ dkim_record_name = 'cast._domainkey'
 print("=====dkim start===")
 private_key = OpenSSL.crypto.PKey()
 private_key.generate_key(OpenSSL.crypto.TYPE_RSA, 2048)
-dkim_path = f'C:\\Users\\002GPU744\\Desktop\\code\\flask-tutorial\\go\\cast.{spf_domain}.pem'
+dkim_path = f'/etc/pmta/dkim/cast.{spf_domain}.pem'
 with open(dkim_path, 'wb') as f:
   f.write(OpenSSL.crypto.dump_privatekey(OpenSSL.crypto.FILETYPE_PEM, private_key))
 
@@ -53,9 +53,9 @@ public_key = public_key.decode().replace('-----BEGIN PUBLIC KEY-----\n', '').rep
 dkim_record = f'v=DKIM1; k=rsa; p={public_key}'
 dkim_record_data = dkim_record
 
-with open('C:\\Users\\002GPU744\\Desktop\\code\\flask-tutorial\\go\\dkim_record.txt', 'w') as f:
-  f.write(dkim_record)
-# print(dkim_record)
+#with open('/etc/pmta/dkim/', 'w') as f:
+#  f.write(dkim_record)
+print('DKIM public key = ',dkim_record_data)
 
 go_module.update_or_add_record(spf_domain, dkim_record_type, dkim_record_name, dkim_record_data)
 
@@ -81,7 +81,3 @@ go_module.update_or_add_record(spf_domain, dkim_record_type, dkim_record_name, d
 # update_or_add_record(domain, mx_record_type, mx_record_name, mx_record_data)
 
 # client.add_record(domain, {'data': ip_address, 'name': 'abcd', 'ttl': 3600, 'type': 'A'})
-
-
-
-
