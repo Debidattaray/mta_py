@@ -84,6 +84,8 @@ echo "#########################################  STEP- 3  ######################
 service pmta stop
 python3 ./go_dns.py
 #pmtad --debug
+sh ./clear_log.sh
+echo "Auto log clean setup Done ... "
 echo "#########################################  DNS Details  #######################################"
 
 ulimit -n 766889
