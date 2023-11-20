@@ -8,3 +8,4 @@ Power MTA auto installer
 ### mv mta_py apps
 ### cd /apps/mta_py
 ### chmod -R 755 .
+### vi change_names.py
