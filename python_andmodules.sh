@@ -7,7 +7,7 @@ yum install -y python3-pip
 
 pip3 install --upgrade pip
 pip3 install pyopenssl
-pip3 install GoDaddyPy
+pip3 install GoDaddyPy==2.4
 
 
 
