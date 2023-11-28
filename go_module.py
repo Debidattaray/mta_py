@@ -20,3 +20,8 @@ def update_or_add_record(domain, record_type, record_name, record_data):
   else:
     client.add_record(domain, {'data': record_data, 'name': record_name, 'type': record_type})
     print(f'Added {record_type} record for {record_name}.{domain} with data => {record_data}')
+
+
+def add_record(domain, record_type, record_name, record_data):
+    client.add_record(domain, {'data': record_data, 'name': record_name, 'type': record_type})
+    print(f'Added {record_type} record for {record_name}.{domain} with data => {record_data}')
